@@ -3,6 +3,7 @@ import dotenv
 dotenv.load_dotenv()
 routiney_token = os.getenv('routiney_token')
 from utils import *
+from routine import routine
 
 import discord
 intents = discord.Intents.default()
@@ -29,7 +30,12 @@ async def on_message(message):
     await message.channel.send(help_text)
   
   if message.content.startswith('!rutu'):
-    await message.channel.send('Ask the CR')
+    if len(message.content) < 6:
+      day = calculate_day('')
+    else:
+      day = calculate_day(message.content[6:])
+    schedule_text = routine.format_routine(day)
+    await message.channel.send(f'```{schedule_text}```\n-# (Please refer to CR for any changes to this routine.)')
 
 
 

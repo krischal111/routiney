@@ -1,6 +1,6 @@
 ## Bot manual:
 Enter `!help` for this help ( `[]`: Optional paramters `<>`: Compulsory )
-#### Commands:
+### Commands:
 - `!rutu [day]`: Shows the routine for particular day.
     - `[day]` could take following values:
     - ` `, `today` : Shows today's routine.
